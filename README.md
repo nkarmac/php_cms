@@ -1,7 +1,7 @@
 # Pure PHP CMS
 Personal Pure PHP Content Management System
 
-1. Download Source Files to PHP host directory (eg. xampp/htdocs)
+1. Download `cms` source directory to PHP host directory (eg. xampp/htdocs)
 2. Run server & database (eg. Apache & MySQL)
 3. Create database & tables
 ```
@@ -23,4 +23,4 @@ CREATE TABLE articles (
 );
 ```
 4. Configure database permissions in [config/db.php](cms/config/db.php)
-5. Access server (eg. localhost/cms)
+5. Access server (eg. localhost/cms/index.php)
