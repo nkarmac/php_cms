@@ -22,5 +22,5 @@ CREATE TABLE articles (
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-4. Configure database permissions in [config/db.php](src/config/db.php)
+4. Configure database permissions in [config/db.php](cms/config/db.php)
 5. Access server (eg. localhost/cms)
