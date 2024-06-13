@@ -1,0 +1,33 @@
+<?php
+include 'functions/auth.php';
+include 'functions/content.php';
+
+if (!is_logged_in()) {
+    header('Location: login.php');
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = $_POST['title'];
+    $body = $_POST['body'];
+    if (create_article($title, $body)) {
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        $error = "Failed to create article.";
+    }
+}
+?>
+<?php include 'templates/header.php'; ?>
+<h2>Create Article</h2>
+<?php if (isset($error)): ?>
+    <p style="color: red;"><?= $error ?></p>
+<?php endif; ?>
+<form action="create.php" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body" required></textarea>
+    <button type="submit">Create</button>
+</form>
+<?php include 'templates/footer.php'; ?>
